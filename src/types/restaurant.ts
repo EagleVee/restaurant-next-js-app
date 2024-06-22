@@ -1,4 +1,4 @@
-enum STORE_CATEGORY {
+export enum STORE_CATEGORY {
     SUSHI = 'SUSHI',
     UNAGI = 'UNAGI',
     TEMPURA = 'TEMPURA',
@@ -22,7 +22,7 @@ enum STORE_CATEGORY {
     OTHER = 'OTHER',
 }
 
-const textByStoreCategory: Record<STORE_CATEGORY, string> = {
+export const textByStoreCategory: Record<STORE_CATEGORY, string> = {
     [STORE_CATEGORY.SUSHI]: '스시·해산물',
     [STORE_CATEGORY.UNAGI]: '장어',
     [STORE_CATEGORY.TEMPURA]: '덴푸라',
@@ -45,3 +45,22 @@ const textByStoreCategory: Record<STORE_CATEGORY, string> = {
     [STORE_CATEGORY.IZAKAYA]: '이자카야·바',
     [STORE_CATEGORY.OTHER]: '기타 일본 음식',
 };
+
+export interface Featured {
+    text: string;
+    icon: string;
+}
+
+export interface Restaurant {
+    id: string;
+    name: string;
+    desc: string;
+    rating: number;
+    rating_count: number;
+    category: string;
+    city: string;
+    price_range: string;
+    images: string[];
+    isFavorite: boolean;
+    featured: Featured;
+}
