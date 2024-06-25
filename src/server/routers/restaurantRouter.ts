@@ -31,14 +31,19 @@ export const restaurantRouter = router({
                 where.category = category;
             }
 
-            return prisma.restaurant.findMany({
+            const items = await prisma.restaurant.findMany({
                 skip,
-                take,
+                take: take + 1,
                 where,
                 orderBy: {
                     [sortBy]: sortOrder,
                 },
             });
+
+            const hasMore = items.length > take;
+            const restaurants = items.slice(0, take);
+
+            return { restaurants, hasMore };
         }),
     toggleFavorite: procedure
         .input(z.object({ id: z.string(), isFavorite: z.boolean() }))
