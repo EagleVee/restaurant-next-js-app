@@ -3,7 +3,7 @@ import { Restaurant } from '@prisma/client';
 import IconHeart from '@/assets/icons/heart.svg';
 import IconStar from '@/assets/icons/star.svg';
 import styles from './RestaurantCard.module.css';
-import { Featured } from '@/types/restaurant';
+import { Featured, STORE_CATEGORY, textByStoreCategory } from '@/types/restaurant';
 import { SparklesIcon } from '@heroicons/react/24/outline';
 import { HeroIcon } from '@/types/heroicons';
 
@@ -75,7 +75,9 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onFavoriteC
                     </div>
                     <p className="text-gray-900 mt-1 truncate text-sm">{desc}</p>
                     <p className="text-gray-900 mt-1 truncate text-sm">
-                        {city} · {category} · {price_range}만원
+                        {city?.length ? `${city} · ` : ''}
+                        {textByStoreCategory[category as STORE_CATEGORY] || ''}
+                        {price_range?.length ? ` · ${price_range}만원` : ''}
                     </p>
                 </div>
             </div>
