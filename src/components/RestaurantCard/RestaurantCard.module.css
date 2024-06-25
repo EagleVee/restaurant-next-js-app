@@ -1,4 +1,25 @@
-.heart-button {
+.heartButton {
     width: 36px;
     height: 36px;
+    transition:
+        transform 0.3s ease,
+        fill 0.3s ease;
+}
+
+.animateHeart {
+    animation: scaleHeart 0.5s ease forwards;
+}
+
+.image {
+
+}
+
+@keyframes scaleHeart {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
 }

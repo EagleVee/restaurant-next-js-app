@@ -1,24 +1,38 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { STORE_CATEGORY, textByStoreCategory } from '@/types/restaurant';
 
-const CategoryTabs: React.FC = () => {
-    const [currentCategory, setCurrentCategory] = React.useState<STORE_CATEGORY | null>(null);
+interface CategoryTabsProps {
+    onCategoryChange: (category?: STORE_CATEGORY) => void;
+}
 
-    const renderItem = (category: string | null) => {
+const CategoryTabs: React.FC<CategoryTabsProps> = ({ onCategoryChange }) => {
+    const [currentCategory, setCurrentCategory] = React.useState<STORE_CATEGORY | undefined>();
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const renderItem = (category?: string) => {
+        const typedCategory = category as STORE_CATEGORY;
         return (
             <div
                 onClick={() => {
-                    setCurrentCategory(category as STORE_CATEGORY | null);
+                    setCurrentCategory(typedCategory);
+                    onCategoryChange?.(typedCategory);
                 }}
                 key={category}
                 className={`rounded flex items-center text-gray-900 px-3 py-1 cursor-pointer ${currentCategory === category ? 'bg-gray-200' : ''}`}>
-                <span className="text-sm">{category ? textByStoreCategory[category as STORE_CATEGORY] : 'All'}</span>
+                <span className="text-sm">{category ? textByStoreCategory[typedCategory] : 'All'}</span>
             </div>
         );
     };
     return (
-        <div className="flex overflow-x-auto whitespace-nowrap p-4 space-x-4">
-            {renderItem(null)}
+        <div
+            ref={containerRef}
+            className="flex overflow-x-auto whitespace-nowrap p-4 space-x-4"
+            onWheel={(event) => {
+                if (containerRef.current) {
+                    containerRef.current.scrollLeft += event.deltaY;
+                }
+            }}>
+            {renderItem()}
             {Object.keys(STORE_CATEGORY).map(renderItem)}
         </div>
     );
