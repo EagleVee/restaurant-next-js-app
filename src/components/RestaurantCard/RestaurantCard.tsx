@@ -1,29 +1,47 @@
-import React from 'react';
-import { Restaurant } from '@/types/restaurant';
+import React, { useState } from 'react';
+import { Restaurant } from '@prisma/client';
 import IconHeart from '@/assets/icons/heart.svg';
 import IconStar from '@/assets/icons/star.svg';
 import styles from './RestaurantCard.module.css';
+import { Featured } from '@/types/restaurant';
+import { SparklesIcon } from '@heroicons/react/24/outline';
+import { HeroIcon } from '@/types/heroicons';
 
 interface RestaurantCardProps {
     restaurant: Restaurant;
+    onFavoriteClick: (isFavorite: boolean, restaurant: Restaurant) => void;
 }
 
-const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
+const FeaturedIcons: Record<string, HeroIcon> = {
+    'stars-02': SparklesIcon,
+};
+
+const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onFavoriteClick }) => {
     const { name, desc, rating, rating_count, images, isFavorite, featured } = restaurant;
+    const [favourite, setFavourite] = useState(isFavorite);
+    const typedFeatured = featured as unknown as Featured;
+    const FeaturedIcon = FeaturedIcons[typedFeatured.icon];
     return (
         <div className="p-4">
             <div className="rounded-lg overflow-hidden shadow-lg">
                 <img src={images[0]} alt={name} className="w-full h-48 object-cover" />
                 <div className="p-4">
-                    <div className="flex items-center justify-between">
-                        <span className="text-tint-color">{featured.text}</span>
+                    <div className="flex items-center">
+                        <span className="text-tint-color">
+                            {!!FeaturedIcon && <FeaturedIcon className="w-5 h-5" />}
+                        </span>
+                        <span className="flex-1 text-tint-color ml-1">{typedFeatured?.text || ''}</span>
                         <button
-                            className={`${styles['heart-button']} flex justify-center items-center rounded-full bg-black bg-opacity-50`}>
+                            className={`${styles['heart-button']} flex justify-center items-center rounded-full bg-black bg-opacity-50`}
+                            onClick={() => {
+                                setFavourite(!favourite);
+                                onFavoriteClick(!favourite, restaurant);
+                            }}>
                             <IconHeart
                                 width="20"
                                 height="20"
-                                fill={isFavorite ? '#FF692E' : 'none'}
-                                stroke={isFavorite ? '#FF692E' : 'white'}
+                                fill={favourite ? '#FF692E' : 'none'}
+                                stroke={favourite ? '#FF692E' : 'white'}
                             />
                         </button>
                     </div>
