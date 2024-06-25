@@ -18,8 +18,9 @@ const FeaturedIcons: Record<string, HeroIcon> = {
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onFavoriteClick }) => {
     const { name, desc, rating, rating_count, images, isFavorite, featured, price_range, city, category } = restaurant;
-    const [animate, setAnimate] = useState(false);
+
     const [favourite, setFavourite] = useState(isFavorite);
+    const [animate, setAnimate] = useState(false);
 
     const typedFeatured = featured as unknown as Featured;
     const FeaturedIcon = FeaturedIcons[typedFeatured.icon];

@@ -6,7 +6,7 @@ async function main() {
     for (const restaurant of restaurants) {
         await prisma.restaurant.upsert({
             where: {
-                id: restaurant.id,
+                id: restaurant.id || '',
             },
             update: restaurant,
             create: restaurant,

@@ -20,7 +20,7 @@ export const restaurantRouter = router({
                 .optional()
         )
         .query(async ({ input }) => {
-            const { queryString, category, sortBy = 'id', sortOrder = 'asc', take = 9, skip = 0 } = input || {};
+            const { queryString, category, sortBy = 'id', sortOrder = 'asc', take = 12, skip = 0 } = input || {};
             const where: Prisma.RestaurantWhereInput = {};
 
             if (queryString) {

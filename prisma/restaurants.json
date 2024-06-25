@@ -182,5 +182,215 @@
             "icon": "stars-02"
         },
         "isFavorite": false
+    },
+    {
+        "rating": 4.3,
+        "rating_count": 105,
+        "category": "UNAGI",
+        "city": "hiroshima",
+        "desc": "전통적인 우나기 요리를 맛볼 수 있는",
+        "images": ["https://images.unsplash.com/photo-1570585429632-e8b74372a3ed"],
+        "name": "우나기 나가사키",
+        "price_range": "4~6",
+        "featured": {
+            "text": "히로시마에서 추천하는 우나기 맛집",
+            "icon": "stars-02"
+        },
+        "isFavorite": true
+    },
+    {
+        "rating": 4.5,
+        "rating_count": 210,
+        "category": "TONKATSU",
+        "city": "tokyo",
+        "desc": "고급스러운 돈까스를 제공하는",
+        "images": ["https://images.unsplash.com/photo-1604908177264-c462b4d1a0ab"],
+        "name": "돈까스 마에다",
+        "price_range": "3~5",
+        "featured": {
+            "text": "도쿄의 숨겨진 돈까스 명소",
+            "icon": "stars-02"
+        },
+        "isFavorite": false
+    },
+    {
+        "rating": 4.6,
+        "rating_count": 190,
+        "category": "SUKIYAKI",
+        "city": "nagoya",
+        "desc": "진한 맛의 스키야키를 즐길 수 있는",
+        "images": ["https://images.unsplash.com/photo-1561043433-aaf687c4cf04"],
+        "name": "스키야키 후지모토",
+        "price_range": "5~7",
+        "featured": {
+            "text": "나고야의 스키야키 명소",
+            "icon": "stars-02"
+        },
+        "isFavorite": true
+    },
+    {
+        "rating": 4.2,
+        "rating_count": 165,
+        "category": "SUKIYAKI",
+        "city": "osaka",
+        "desc": "다양한 스키야키 옵션을 제공하는",
+        "images": ["https://images.unsplash.com/photo-1611599539856-45b739b7fa2a"],
+        "name": "스키야키 토모다치",
+        "price_range": "3~5",
+        "featured": {
+            "text": "오사카에서 즐기는 최고의 스키야키",
+            "icon": "stars-02"
+        },
+        "isFavorite": false
+    },
+    {
+        "rating": 4.7,
+        "rating_count": 250,
+        "category": "YAKISOBA",
+        "city": "fukuoka",
+        "desc": "유명한 야키소바 전문점",
+        "images": ["https://images.unsplash.com/photo-1508736793122-f516e3ba5569"],
+        "name": "야키소바 스미요시",
+        "price_range": "2~4",
+        "featured": {
+            "text": "후쿠오카 최고의 야키소바",
+            "icon": "stars-02"
+        },
+        "isFavorite": true
+    },
+    {
+        "rating": 4.0,
+        "rating_count": 120,
+        "category": "OKONOMIYAKI",
+        "city": "sapporo",
+        "desc": "창의적인 오코노미야키 요리를 제공하는",
+        "images": ["https://images.unsplash.com/photo-1532347231146-80afc9e3df84"],
+        "name": "오코노미야키 마코토",
+        "price_range": "1~3",
+        "featured": {
+            "text": "삿포로의 오코노미야키 추천",
+            "icon": "stars-02"
+        },
+        "isFavorite": false
+    },
+    {
+        "rating": 4.8,
+        "rating_count": 280,
+        "category": "DONBURI",
+        "city": "kyoto",
+        "desc": "전통적인 돈부리 요리를 맛볼 수 있는",
+        "images": ["https://images.unsplash.com/photo-1551218808-94e220e084d2"],
+        "name": "돈부리 코우지",
+        "price_range": "4~6",
+        "featured": {
+            "text": "교토의 돈부리 맛집",
+            "icon": "stars-02"
+        },
+        "isFavorite": true
+    },
+    {
+        "rating": 4.3,
+        "rating_count": 165,
+        "category": "ODEN",
+        "city": "nagoya",
+        "desc": "다양한 오뎅을 맛볼 수 있는",
+        "images": ["https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"],
+        "name": "오뎅 바 신사이바시",
+        "price_range": "2~4",
+        "featured": {
+            "text": "나고야의 오뎅 추천",
+            "icon": "stars-02"
+        },
+        "isFavorite": false
+    },
+    {
+        "rating": 4.5,
+        "rating_count": 210,
+        "category": "KAISEKI",
+        "city": "tokyo",
+        "desc": "고급스러운 카이세키 요리를 경험할 수 있는",
+        "images": ["https://images.unsplash.com/photo-1561043433-aaf687c4cf04"],
+        "name": "카이세키 하루",
+        "price_range": "5~7",
+        "featured": {
+            "text": "도쿄의 카이세키 전문점",
+            "icon": "stars-02"
+        },
+        "isFavorite": true
+    },
+    {
+        "rating": 4.1,
+        "rating_count": 130,
+        "category": "HAMBAGU",
+        "city": "osaka",
+        "desc": "일본식 햄버그 스테이크를 제공하는",
+        "images": ["https://images.unsplash.com/photo-1604908177264-c462b4d1a0ab"],
+        "name": "햄버그 쿠로사와",
+        "price_range": "3~5",
+        "featured": {
+            "text": "오사카의 햄버그 맛집",
+            "icon": "stars-02"
+        },
+        "isFavorite": false
+    },
+    {
+        "rating": 4.6,
+        "rating_count": 245,
+        "category": "TEPPANYAKI",
+        "city": "hiroshima",
+        "desc": "전통적인 철판구이 요리를 제공하는",
+        "images": ["https://images.unsplash.com/photo-1508736793122-f516e3ba5569"],
+        "name": "철판구이 오오노",
+        "price_range": "4~6",
+        "featured": {
+            "text": "히로시마 철판구이 추천",
+            "icon": "stars-02"
+        },
+        "isFavorite": true
+    },
+    {
+        "rating": 4.4,
+        "rating_count": 170,
+        "category": "CURRY",
+        "city": "fukuoka",
+        "desc": "일본식 카레를 맛볼 수 있는",
+        "images": ["https://images.unsplash.com/photo-1551218808-94e220e084d2"],
+        "name": "카레 하우스 나카노",
+        "price_range": "2~4",
+        "featured": {
+            "text": "후쿠오카의 카레 맛집",
+            "icon": "stars-02"
+        },
+        "isFavorite": false
+    },
+    {
+        "rating": 4.7,
+        "rating_count": 250,
+        "category": "YAKINIKU",
+        "city": "sapporo",
+        "desc": "고급 육류를 사용한 야키니쿠를 제공하는",
+        "images": ["https://images.unsplash.com/photo-1561043433-aaf687c4cf04"],
+        "name": "야키니쿠 아사노",
+        "price_range": "5~7",
+        "featured": {
+            "text": "삿포로의 야키니쿠 추천",
+            "icon": "stars-02"
+        },
+        "isFavorite": true
+    },
+    {
+        "rating": 4.2,
+        "rating_count": 145,
+        "category": "NABE",
+        "city": "kyoto",
+        "desc": "다양한 종류의 나베를 즐길 수 있는",
+        "images": ["https://images.unsplash.com/photo-1611599539856-45b739b7fa2a"],
+        "name": "나베 사쿠라",
+        "price_range": "3~5",
+        "featured": {
+            "text": "교토의 나베 추천",
+            "icon": "stars-02"
+        },
+        "isFavorite": false
     }
 ]
