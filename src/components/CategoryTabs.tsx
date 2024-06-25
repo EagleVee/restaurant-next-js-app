@@ -26,7 +26,7 @@ const CategoryTabs: React.FC<CategoryTabsProps> = ({ onCategoryChange }) => {
     return (
         <div
             ref={containerRef}
-            className="flex overflow-x-auto whitespace-nowrap p-4 space-x-4"
+            className="flex overflow-x-auto whitespace-nowrap p-4 space-x-2"
             onWheel={(event) => {
                 if (containerRef.current) {
                     containerRef.current.scrollLeft += event.deltaY;
