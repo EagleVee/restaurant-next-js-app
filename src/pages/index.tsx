@@ -3,7 +3,7 @@ import { trpc } from '@/utils/trpc';
 
 import SearchBar from '@/components/SearchBar';
 import CategoryTabs from '@/components/CategoryTabs';
-import RestaurantCard from '@/components/RestaurantCard';
+import RestaurantCard from '@/components/RestaurantCard/RestaurantCard';
 
 const Home: React.FC = () => {
     const { data, isLoading } = trpc.restaurants.getRestaurants.useQuery();
@@ -27,9 +27,13 @@ const Home: React.FC = () => {
             <SearchBar />
             <CategoryTabs />
             <div className="p-4">
-                {data.map((restaurant) => (
-                    <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-                ))}
+                <div className="flex flex-wrap -mx-2">
+                    {data.map((restaurant) => (
+                        <div key={restaurant.id} className="w-full md:w-1/2 lg:w-1/3 px-1 mb-1">
+                            <RestaurantCard restaurant={restaurant} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
