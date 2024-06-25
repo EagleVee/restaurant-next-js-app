@@ -4,7 +4,13 @@ const prisma = new PrismaClient();
 
 async function main() {
     for (const restaurant of restaurants) {
-        await prisma.restaurant.create({ data: restaurant });
+        await prisma.restaurant.upsert({
+            where: {
+                id: restaurant.id,
+            },
+            update: restaurant,
+            create: restaurant,
+        });
     }
 }
 
