@@ -24,6 +24,8 @@ This Restaurant App is a modern web application built using Next.js, tRPC, Prism
 
 ## Demo
 
+[Vercel App Demo](https://restaurant-app-tau-two.vercel.app/)
+
 [Demo Video](https://youtu.be/X3E_bSNkiUc)
 
 ## Local Development
