@@ -9,7 +9,8 @@ export const config = {
     runtime: isVercelEnvironment ? 'edge' : 'nodejs',
 };
 
-const edgeHandler = async (req: NextRequest) => {
+const edgeHandler = (req: NextRequest) => {
+    console.log('-> req:', req);
     return fetchRequestHandler({
         endpoint: '/api/trpc',
         router: appRouter,
