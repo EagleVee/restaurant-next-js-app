@@ -3,11 +3,11 @@ import { appRouter } from '@/server/routers/_app';
 import { NextRequest } from 'next/server';
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 
-// I tried but haven't found a way use edge handle without Vercel in local environment
+const isVercelEnvironment = !!process.env.VERCEL_URL?.length;
 
-// export const config = {
-//     runtime: 'edge',
-// };
+export const config = {
+    runtime: isVercelEnvironment ? 'edge' : 'nodejs',
+};
 
 const edgeHandler = async (req: NextRequest) => {
     return fetchRequestHandler({
@@ -23,4 +23,4 @@ const trpcHandler = trpcNext.createNextApiHandler({
     createContext: () => ({}),
 });
 
-export default trpcHandler;
+export default isVercelEnvironment ? edgeHandler : trpcHandler;
