@@ -57,7 +57,7 @@ const Home: React.FC = () => {
             <div className="p-2 mb-8">
                 <div className="flex flex-wrap -mx-2">
                     {isLoading || isRefetching ? (
-                        <div className="flex justify-center items-center h-96 w-full">
+                        <div className="flex justify-center items-center mt-60 w-full">
                             <LoadingSpinner size={48} />
                         </div>
                     ) : restaurants.length ? (
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
                     ) : (
                         <EmptyRestaurant />
                     )}
-                    {hasNextPage && !isLoading && (
+                    {hasNextPage && !isLoading && !isRefetching && (
                         <button
                             className="w-48 py-1 mx-auto block text-center text-tint-color hover:text-white bg-white hover:bg-tint-color rounded border-tint-color border-2"
                             onClick={loadMore}>
