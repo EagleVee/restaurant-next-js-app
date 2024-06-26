@@ -32,8 +32,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                     <button
                         type="button"
                         onClick={handleClear}
-                        className="absolute right-20 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-gray-300 hover:text-white rounded-full">
-                        <XMarkIcon className="w-5 h-5" />
+                        className="absolute right-20 p-0.5 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-gray-300 hover:text-white rounded-full">
+                        <XMarkIcon className="w-4 h-4" />
                     </button>
                 )}
                 <button

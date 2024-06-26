@@ -10,7 +10,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ size = 16 }) => {
             <svg
                 style={{ width: size, height: size }}
                 aria-hidden="true"
-                className="inline w-16 h-16 text-gray-200 animate-spin fill-tint-color"
+                className="inline text-gray-200 animate-spin fill-tint-color"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">

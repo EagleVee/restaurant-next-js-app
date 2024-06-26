@@ -50,6 +50,8 @@ const Home: React.FC = () => {
         fetchNextPage();
     };
 
+    const shouldShowLoadMore = hasNextPage && !isLoading && !isRefetching;
+
     return (
         <div>
             <SearchBar onSearch={onSearchRestaurant} />
@@ -69,12 +71,20 @@ const Home: React.FC = () => {
                     ) : (
                         <EmptyRestaurant />
                     )}
-                    {hasNextPage && !isLoading && !isRefetching && (
-                        <button
-                            className="w-48 py-1 mx-auto block text-center text-tint-color hover:text-white bg-white hover:bg-tint-color rounded border-tint-color border-2"
-                            onClick={loadMore}>
-                            {isFetchingNextPage ? <LoadingSpinner size={16} /> : 'Load more'}
-                        </button>
+                    {shouldShowLoadMore && (
+                        <div className="mt-2 w-full flex justify-center items-center">
+                            {isFetchingNextPage ? (
+                                <div className="text-tint-color">
+                                    <LoadingSpinner size={28} />
+                                </div>
+                            ) : (
+                                <button
+                                    className="px-4 py-1 text-center text-tint-color hover:text-white bg-white hover:bg-tint-color rounded border-tint-color border-2 text-sm"
+                                    onClick={loadMore}>
+                                    Load more
+                                </button>
+                            )}
+                        </div>
                     )}
                 </div>
             </div>
