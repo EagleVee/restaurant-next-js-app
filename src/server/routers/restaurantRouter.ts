@@ -10,17 +10,17 @@ export const restaurantRouter = router({
         .input(
             z
                 .object({
+                    cursor: z.number().min(0).default(0),
                     queryString: z.string().optional(),
                     category: z.nativeEnum(STORE_CATEGORY).optional(),
                     take: z.number().optional(),
-                    skip: z.number().optional(),
                     sortBy: z.string().optional(),
                     sortOrder: z.enum(['asc', 'desc']).optional(),
                 })
                 .optional()
         )
         .query(async ({ input }) => {
-            const { queryString, category, sortBy = 'id', sortOrder = 'asc', take = 12, skip = 0 } = input || {};
+            const { queryString, category, sortBy = 'id', sortOrder = 'asc', take = 12, cursor = 0 } = input || {};
             const where: Prisma.RestaurantWhereInput = {};
 
             if (queryString) {
@@ -32,7 +32,7 @@ export const restaurantRouter = router({
             }
 
             const items = await prisma.restaurant.findMany({
-                skip,
+                skip: cursor * take,
                 take: take + 1,
                 where,
                 orderBy: {
@@ -42,8 +42,9 @@ export const restaurantRouter = router({
 
             const hasMore = items.length > take;
             const restaurants = items.slice(0, take);
+            const nextCursor = hasMore ? cursor + 1 : undefined;
 
-            return { restaurants, hasMore };
+            return { restaurants, hasMore, nextCursor };
         }),
     toggleFavorite: procedure
         .input(z.object({ id: z.string(), isFavorite: z.boolean() }))
