@@ -109,7 +109,8 @@ This Restaurant App is a modern web application built using Next.js, tRPC, Prism
     yarn seed
     ```
 
-    -
+    - Run `vercel` again to deploy with linked PostgreSQL database
+    - Visit the URL generated in the terminal to view your app, or go to Vercel Dashboard to get the fixed production URL.
 
 4. **Deploy**
 
