@@ -114,7 +114,7 @@ This Restaurant App is a modern web application built using Next.js, tRPC, Prism
 
 4. **Deploy**
 
-    Vercel will automatically deploy your app. Watch the deployment under the "Deployments" tab.
+    Vercel will automatically deploy your app on push to `main`. Watch the deployment under the "Deployments" tab.
 
 ## Accessing Environment Variables
 
