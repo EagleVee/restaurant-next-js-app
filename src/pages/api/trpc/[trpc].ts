@@ -10,7 +10,7 @@ export const config = {
 };
 
 const edgeHandler = (req: NextRequest) => {
-    console.log('-> req:', req);
+    console.log('-> req:', req.headers);
     return fetchRequestHandler({
         endpoint: '/api/trpc',
         router: appRouter,
