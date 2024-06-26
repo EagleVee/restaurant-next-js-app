@@ -11,12 +11,17 @@ export const config = {
 
 const edgeHandler = (req: NextRequest) => {
     console.log('-> req:', req.headers);
-    return fetchRequestHandler({
-        endpoint: '/api/trpc',
-        router: appRouter,
-        req,
-        createContext: () => ({}),
-    });
+    try {
+        return fetchRequestHandler({
+            endpoint: '/api/trpc',
+            router: appRouter,
+            req,
+            createContext: () => ({}),
+        });
+    } catch (err) {
+        const error = err as Error;
+        console.log('-> err:', error.message);
+    }
 };
 
 const trpcHandler = trpcNext.createNextApiHandler({
