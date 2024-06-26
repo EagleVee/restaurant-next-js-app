@@ -56,7 +56,7 @@ const Home: React.FC = () => {
         <div>
             <SearchBar onSearch={onSearchRestaurant} />
             <CategoryTabs onCategoryChange={onCategoryChange} />
-            <div className="p-2 mb-8">
+            <div className="p-2">
                 <div className="flex flex-wrap -mx-2">
                     {isLoading || isRefetching ? (
                         <div className="flex justify-center items-center mt-60 w-full">

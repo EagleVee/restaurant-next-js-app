@@ -2,6 +2,7 @@ import Head from 'next/head';
 import type { ReactNode } from 'react';
 
 import { Inter } from 'next/font/google';
+import NavigationBar from '@/components/Navigation/NavigationBar';
 
 type DefaultLayoutProps = { children: ReactNode };
 
@@ -15,7 +16,8 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={inter.className}>{children}</main>
+            <main className={`${inter.className} pb-16`}>{children}</main>
+            <NavigationBar />
         </>
     );
 };
